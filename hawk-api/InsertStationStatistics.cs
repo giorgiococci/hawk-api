@@ -70,17 +70,17 @@ namespace SmartVision.Function
                 foreach (var s in data){
 
                     try {
-                    string station = s.station;
-                    string item = s.item;
-                    string imageName = s.imageName;
-                    string truePositive = s.truePositive;
-                    string falsePositive = s.falsePositive;
-                    string falseNegative = s.falseNegative;
-                    string modelName = s.modelName;
-                    string modelVersion = s.modelVersion;
+                        string station = s.station;
+                        string item = s.item;
+                        string imageName = s.imageName;
+                        string truePositive = s.truePositive;
+                        string falsePositive = s.falsePositive;
+                        string falseNegative = s.falseNegative;
+                        string modelName = s.modelName;
+                        string modelVersion = s.modelVersion;
 
 
-                    InsertStatistics(connString, station, item, imageName, truePositive, falsePositive, falseNegative, modelName, modelVersion);
+                        InsertStatistics(connString, station, item, imageName, truePositive, falsePositive, falseNegative, modelName, modelVersion);
 
                     }
                     catch (Exception ex){
