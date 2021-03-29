@@ -60,7 +60,12 @@ namespace SmartVision.Function
 
                 string connString = Environment.GetEnvironmentVariable("SQL_DATABASE_CONNECTION_STRING");
 
+                bool isError = false;
+                string errorMessage = "";
+
                 foreach (var s in data){
+
+                    try {
                     string station = s.station;
                     string item = s.item;
                     string imageName = s.imageName;
@@ -72,14 +77,25 @@ namespace SmartVision.Function
 
 
                     InsertStatistics(connString, station, item, imageName, truePositive, falsePositive, falseNegative, modelName, modelVersion);
+
+                    }
+                    catch (Exception ex){
+                        isError = true;
+                        string msg = String.Concat("Error Message: ", ex.Message, ". Error Data: ", s);
+                        errorMessage = String.Concat(errorMessage, "\n\r", msg);
+                        log.LogError(msg);
+                    }
                 }
 
-                string name = "";
-                name = name ?? data?.name;
-
-                string responseMessage = "All annotations were written correctly in the database.";
-
-                return new OkObjectResult(responseMessage);
+                if(isError)
+                {
+                    log.LogError(errorMessage);
+                    return new BadRequestObjectResult(errorMessage);
+                }
+                else {
+                    string responseMessage = "All annotations were written correctly in the database.";
+                    return new OkObjectResult(responseMessage);
+                }
             }
             catch (Exception ex)
             {
