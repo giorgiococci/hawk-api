@@ -55,7 +55,11 @@ namespace SmartVision.Function
         {
 
             try {
+
                 string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+
+                log.LogInformation(requestBody);
+
                 dynamic data = JsonConvert.DeserializeObject(requestBody);
 
                 string connString = Environment.GetEnvironmentVariable("SQL_DATABASE_CONNECTION_STRING");

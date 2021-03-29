@@ -1,0 +1,53 @@
+[
+    {
+        "station": "GIORGIO_001",
+        "item": "test",
+        "imageName": "test1",
+        "truePositive": "2", 
+        "falsePositive": "5", 
+        "falseNegative" : "1",
+        "modelName": "faster_rcnn",
+        "modelVersion": "13"
+    },
+    {
+        "station": "GIORGIO_001",
+        "item": "test",
+        "imageName": "test2",
+        "truePositive": "1", 
+        "falsePositive": "0", 
+        "falseNegative" : "0",
+        "modelName": "faster_rcnn",
+        "modelVersion": "13"
+    }
+	,
+    {
+        "station": "GIORGIO_001",
+        "item": "test",
+        "imageName": "test3",
+        "truePositive": "pippo", 
+        "falsePositive": "0", 
+        "falseNegative" : "0",
+        "modelName": "faster_rcnn",
+        "modelVersion": "13"
+    },
+    {
+        "station": "GIORGIO_001",
+        "item": "test",
+        "imageName": "test4",
+        "truePositive": "", 
+        "falsePositive": "0", 
+        "falseNegative" : "0",
+        "modelName": "faster_rcnn",
+        "modelVersion": "13"
+    },
+    {
+        "station": "GIORGIO_001",
+        "item": "test",
+        "imageName": "test5",
+        "truePositive": "10", 
+        "falsePositive": "0", 
+        "falseNegative" : "0",
+        "modelName": "faster_rcnn",
+        "modelVersion": "13"
+    }
+]
